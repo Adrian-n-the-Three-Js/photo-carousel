@@ -17,16 +17,18 @@ app.get('/api/:hotelID/photos', (req, res) => {
     .then( hotels => res.status(200).send(hotels[0]) );
 });
 
-// app.post('/', (req, res) => {
-//   Hotels.insert(req.body)
-//     .then(data => res.status(200).send(data));
-// });
+app.post('/api', (req, res) => {
+  Hotels.insertOne(req.body)
+    .then(data => res.status(200).send(data));
+});
 
-// app.patch();
+app.patch('/api/:hotelID', (req, res) => {
 
-// app.delete('/', (req, res) => {
-//   Hotels.delete({_id: req.params._id})
-// });
+});
+
+app.delete('/api/:hotelID', (req, res) => {
+  Hotels.delete({_id: req.params._id})
+});
 
 
 app.listen(port, () => console.log(`FEC listening on port ${port}`));
