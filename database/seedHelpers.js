@@ -32,7 +32,7 @@ const generateHotelInfo = photos => {
   const assignPhotos = () => {
     const arr = [];
     const indexes = new Set();
-    const numberOfPhotos = Math.floor( Math.random() * (80 - 20) + 20 );
+    const numberOfPhotos = Math.floor( Math.random() * (30 - 4) + 4 );
 
     for (let i = 0; i < numberOfPhotos; i++) {
       let idx = Math.floor( Math.random() * numberOfPhotos );

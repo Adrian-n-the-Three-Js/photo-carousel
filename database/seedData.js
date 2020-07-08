@@ -67,7 +67,7 @@ const storePhotos = photoData => {
 
     const newPhoto = {
       id: photo.id,
-      url: photo.urls.regular,
+      url: photo.urls.small,
       date: photo.created_at,
       user: randomPhotoInfo.user,
       caption: randomPhotoInfo.user.review,
@@ -83,7 +83,7 @@ const storePhotos = photoData => {
 
 const printHotels = () => {
   Hotels.find({})
-    .then(hotels => console.log('# of Hotels stored:', hotels.length))
+    .then(data => console.log('# of Hotels stored:', data.length))
     .then(() => {
       db.close();
       console.log('DB CLOSED');

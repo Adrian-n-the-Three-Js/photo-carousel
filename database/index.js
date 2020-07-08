@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb://172.17.0.2/fec',
+  // 'mongodb://172.17.0.2/fec', // for AWS/Docker deployment
+  'mongodb://localhost/fec', // for local
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
 );
 

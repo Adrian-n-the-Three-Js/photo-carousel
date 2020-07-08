@@ -4,7 +4,6 @@ import Album from './Album.jsx';
 
 class Albums extends Component {
   getUrlsAndCounts() {
-    // console.log('2');
     const { albums, photos } = this.props;
     const urls = [];
     const counts = [];
@@ -30,7 +29,6 @@ class Albums extends Component {
   }
 
   render() {
-    // console.log('3');
     const { albums } = this.props;
     const urlsAndCounts = this.getUrlsAndCounts();
     const urls = urlsAndCounts[0];

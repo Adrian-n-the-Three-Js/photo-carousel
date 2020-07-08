@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ArrowButton from './ArrowButton.jsx';
 
 const Carousel = props => {
-  const { photos, currIdx, showPrev, showNext } = props;
+  const { photos, currIdx, showPrev, showNext, showModal } = props;
   return photos === undefined
     ? ( // if page is still loading, return blanks
       <Container>
@@ -14,7 +14,7 @@ const Carousel = props => {
       <Container>
         <ArrowButton direction="left" onClick={showPrev} idx={currIdx} />
         <ArrowButton direction="right" onClick={showNext} idx={currIdx} length={photos.length} />
-        <MainPhoto src={ photos[currIdx].url } />
+        <MainPhoto src={ photos[currIdx].url } onClick={showModal} />
       </Container>
     );
 };

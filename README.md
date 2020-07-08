@@ -36,7 +36,8 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-// TODO:
+
+TODO:
 - figure out why the 3 album components on the right will re-render the 1st time i click either an arrow button or menu photo, & only the 1st time
 
 

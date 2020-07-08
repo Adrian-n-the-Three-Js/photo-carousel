@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Carousel from './Carousel.jsx';
 import PhotoMenu from './PhotoMenu.jsx';
 import Albums from './Albums.jsx';
+import Modal from './Modal.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -12,12 +13,14 @@ class App extends Component {
       hotel: {},
       currIdx: 0,
       menuFirstIdx: 0,
-      albums: [ 'Loading...', 'Loading...', 'Loading...' ]
+      albums: [ 'Loading...', 'Loading...', 'Loading...' ],
+      modal: false
     };
 
     this.showPrev = this.showPrev.bind(this);
     this.showNext = this.showNext.bind(this);
     this.menuClick = this.menuClick.bind(this);
+    // this.showModal = this.showModal.bind(this);
   }
 
   componentDidMount() {
@@ -28,7 +31,7 @@ class App extends Component {
       .then(res => {
         res.data.photos.forEach((photo, idx) => photo.idx = idx); // assign each photo an idx
         this.setState({ hotel: res.data });
-        console.log('HOTEL:', this.state.hotel);
+        // console.log('HOTEL:', this.state.hotel);
       })
       .then( () => this.setState({ albums: this.getAlbums() }) );
   }
@@ -74,9 +77,13 @@ class App extends Component {
     this.setState({ currIdx: Number(e.target.id) });
   }
 
+  // showModal() {
+  //   this.setState({ modal: true });
+  // }
+
   render() {
-    // console.log('1');
-    const { hotel, currIdx, menuFirstIdx, albums } = this.state;
+    const { hotel, currIdx, menuFirstIdx, albums, modal } = this.state;
+    // if (modal) return <Modal />;
     return (
       <Background>
         <Outer>
@@ -86,6 +93,7 @@ class App extends Component {
               currIdx={currIdx}
               showPrev={this.showPrev}
               showNext={this.showNext}
+              // showModal={this.showModal}
             />
             <PhotoMenu
               photos={hotel.photos}
