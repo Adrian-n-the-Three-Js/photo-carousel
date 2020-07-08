@@ -3,14 +3,14 @@
 #### Create - Post:
 `/api/:hotelID/photos`
 
-######A dd photo to DB
+###### Add photo to DB
 
 #### Read - Get:
 `/api/:hotelID/photos`
 
 ###### Receive hotel photos
 
-#### Update - Patch:
+#### Update - Put:
 `/api/:hotelID/photos`
 
 ###### Change a photo
