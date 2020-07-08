@@ -1,21 +1,21 @@
-##CRUD Operations
+## CRUD Operations
 
-####Create - Post:
+#### Create - Post:
 `/api/:hotelID/photos`
 
-######Add photo to DB
+######A dd photo to DB
 
-####Read - Get:
+#### Read - Get:
 `/api/:hotelID/photos`
 
-######Receive hotel photos
+###### Receive hotel photos
 
-####Update - Patch:
+#### Update - Patch:
 `/api/:hotelID/photos`
 
-######Change a photo
+###### Change a photo
 
-####Delete - Delete:
+#### Delete - Delete:
 `/api/:hotelID/photos`
 
-######Delete a photo
+###### Delete a photo
