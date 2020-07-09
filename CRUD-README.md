@@ -6,14 +6,11 @@
 
 ###### success: return status 201
 
-
+###### Post new photos given hotel ID requiring the photo and user info below
 ###### input expects JSON in the following format:
 ```
 {
-  id: { type: Number, unique: true },
-  name: String,
-  photoAlbums: [ String ],
-  price: Number,
+  id: Number
   photos: {
     id: String,
     albums: [ String ],
@@ -48,11 +45,11 @@
 ###### returns JSON:
 ```
 {
-  id: { type: Number, unique: true },
+  id: Number,
   name: String,
   photoAlbums: [ String ],
   price: Number,
-  photos: {
+  photos: [{
     id: String,
     albums: [ String ],
     filters: [ String ],
@@ -71,7 +68,7 @@
       contributions: Number,
       review: String
     }
-  }
+  }]
 }
 ```
 
@@ -81,14 +78,11 @@
 
 ###### success: return status 204
 
-
+###### Edit photo information and user information
 ###### input expects JSON with the following key/value pair:
 ```
 {
-  id: { type: Number, unique: true },
-  name: String,
-  photoAlbums: [ String ],
-  price: Number,
+  id: Number,
   photos: {
     id: String,
     albums: [ String ],
