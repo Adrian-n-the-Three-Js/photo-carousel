@@ -1,33 +1,31 @@
 CREATE DATABASE SDC;
 
-\connect SDC
-
 CREATE TABLE hotel (
   hotelID SERIAL,
-  name VARCHAR(255),
-  price INTEGER
+  name VARCHAR(255) NOT NULL,
+  price INTEGER NOT NULL
 );
 
 ALTER TABLE hotel ADD PRIMARY KEY (hotelID);
 
 CREATE TABLE photos (
   photoID SERIAL,
-  date VARCHAR(255),
-  caption VARCHAR(255),
-  helpful INTEGER,
-  url VARCHAR(255)
+  date VARCHAR(255) NOT NULL,
+  caption VARCHAR(255) NOT NULL,
+  helpful INTEGER NOT NULL,
+  url VARCHAR(255) NOT NULL
 );
 
 ALTER TABLE photos ADD PRIMARY KEY (photoID);
 
 CREATE TABLE users (
   userID SERIAL,
-  photoID INTEGER,
-  username VARCHAR(255),
-  location VARCHAR(255),
-  type VARCHAR(255),
-  avatarUrl VARCHAR(255),
-  rating INTEGER,
+  photoID INTEGER NOT NULL,
+  username VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  avatarUrl VARCHAR(255) NOT NULL,
+  rating INTEGER NOT NULL,
   contributions INTEGER,
   review VARCHAR(1000)
 );
@@ -38,21 +36,21 @@ ALTER TABLE users
 
 CREATE TABLE photoAlbums (
   photoAlbumID SERIAL,
-  name VARCHAR(255)
+  name VARCHAR(255) NOT NULL
 );
 
 ALTER TABLE photoAlbums ADD PRIMARY KEY (photoAlbumID);
 
 CREATE TABLE filters (
   filterID SERIAL,
-  name VARCHAR(255)
+  name VARCHAR(255) NOT NULL
 );
 
 ALTER TABLE filters ADD PRIMARY KEY (filterID);
 
 CREATE TABLE trips (
   tripID SERIAL,
-  name VARCHAR(255)
+  name VARCHAR(255) NOT NULL
 );
 
 ALTER TABLE trips ADD PRIMARY KEY (tripID);
