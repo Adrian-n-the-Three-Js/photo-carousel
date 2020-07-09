@@ -5,9 +5,9 @@
 * Post: `/api/:hotelID/photos`
 
 ###### success: return status 201
-###### error: return status 400
 
-###### input format:
+
+###### input expects JSON in the following format:
 ```
 {
   id: { type: Number, unique: true },
@@ -43,9 +43,9 @@
 * Get: `/api/:hotelID/photos`
 
 ###### success: return status 200
-###### error: return status 400
 
-###### returns:
+
+###### returns JSON:
 ```
 {
   id: { type: Number, unique: true },
@@ -77,12 +77,12 @@
 
 #### Update
 
-* Put: `/api/:hotelID/photos`
+* Patch: `/api/:hotelID/photos`
 
-###### success: return status 202
-###### error: return status 400
+###### success: return status 204
 
-###### key/value pair requirements:
+
+###### input expects JSON with the following key/value pair:
 ```
 {
   id: { type: Number, unique: true },
@@ -118,6 +118,6 @@
 * Delete: `/api/:hotelID/photos`
 
 ###### success: return status 204
-###### error: return status 400
+
 
 ###### removes all data given hotel id
