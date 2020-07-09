@@ -1,8 +1,8 @@
 ## CRUD Operations
 
-### Create
-####
-Post: `/api/:hotelID/photos`
+#### Create
+
+* Post: `/api/:hotelID/photos`
 
 ###### success: return status 200
 ###### error: return status 400
@@ -38,9 +38,9 @@ Post: `/api/:hotelID/photos`
 ```
 
 
-### Read
-####
-Get: `/api/:hotelID/photos`
+#### Read
+
+* Get: `/api/:hotelID/photos`
 
 ###### success: return status 200
 ###### error: return status 400
@@ -75,9 +75,9 @@ Get: `/api/:hotelID/photos`
 }
 ```
 
-### Update
-####
-Put: `/api/:hotelID/photos`
+#### Update
+
+* Put: `/api/:hotelID/photos`
 
 ###### success: return status 200
 ###### error: return status 400
@@ -113,9 +113,9 @@ Put: `/api/:hotelID/photos`
 ```
 
 
-### Delete
-####
-Delete: `/api/:hotelID/photos`
+#### Delete
+
+* Delete: `/api/:hotelID/photos`
 
 ###### success: return status 200
 ###### error: return status 400
