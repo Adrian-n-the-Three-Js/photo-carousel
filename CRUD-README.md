@@ -79,7 +79,7 @@
 
 * Put: `/api/:hotelID/photos`
 
-###### success: return status 204
+###### success: return status 202
 ###### error: return status 400
 
 ###### key/value pair requirements:
