@@ -56,8 +56,8 @@ CREATE TABLE trips (
 ALTER TABLE trips ADD PRIMARY KEY (tripID);
 
 CREATE TABLE hotelAlbumDump (
-  hotelID INTEGER,
-  photoAlbumID INTEGER
+  hotelID INTEGER NOT NULL,
+  photoAlbumID INTEGER NOT NULL
 );
 
 ALTER TABLE hotelAlbumDump
@@ -66,8 +66,8 @@ ALTER TABLE hotelAlbumDump
   ADD CONSTRAINT hotelAlbumDump_photoAlbumID_fkey FOREIGN KEY (photoAlbumID) references photoAlbums (photoAlbumID);
 
 CREATE TABLE hotelPhotoDump (
-  hotelID INTEGER,
-  photoID INTEGER
+  hotelID INTEGER NOT NULL,
+  photoID INTEGER NOT NULL
 );
 
 ALTER TABLE hotelPhotoDump
@@ -76,8 +76,8 @@ ALTER TABLE hotelPhotoDump
   ADD CONSTRAINT hotelPhotoDump_photoID_fkey FOREIGN KEY (photoID) references photos (photoID);
 
 CREATE TABLE photoAlbumDump (
-  photoID INTEGER,
-  photoAlbumID INTEGER
+  photoID INTEGER NOT NULL,
+  photoAlbumID INTEGER NOT NULL
 );
 
 ALTER TABLE photoAlbumDump
@@ -86,8 +86,8 @@ ALTER TABLE photoAlbumDump
   ADD CONSTRAINT photoAlbumDump_photoID_fkey FOREIGN KEY (photoID) references photos (photoID);
 
 CREATE TABLE photoFilterDump (
-  photoID INTEGER,
-  filterID INTEGER
+  photoID INTEGER NOT NULL,
+  filterID INTEGER NOT NULL
 );
 
 ALTER TABLE photoFilterDump
@@ -96,8 +96,8 @@ ALTER TABLE photoFilterDump
   ADD CONSTRAINT photoFilterDump_filterID_fkey FOREIGN KEY (filterID) references filters (filterID);
 
 CREATE TABLE photoTripDump (
-  photoID INTEGER,
-  tripID INTEGER
+  photoID INTEGER NOT NULL,
+  tripID INTEGER NOT NULL
 );
 
 ALTER TABLE photoTripDump

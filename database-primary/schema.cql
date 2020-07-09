@@ -8,7 +8,7 @@ CREATE TABLE hotel (
   hotelID uuid,
   name varchar,
   price int,
-  photos list<uuid>
+  photos list<varchar>
   photoAlbum set<varchar>,
   PRIMARY KEY (hotelID)
 );
