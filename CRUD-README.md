@@ -4,7 +4,7 @@
 
 * Post: `/api/:hotelID/photos`
 
-###### success: return status 200
+###### success: return status 201
 ###### error: return status 400
 
 ###### input format:
@@ -79,7 +79,7 @@
 
 * Put: `/api/:hotelID/photos`
 
-###### success: return status 200
+###### success: return status 204
 ###### error: return status 400
 
 ###### key/value pair requirements:
@@ -117,7 +117,7 @@
 
 * Delete: `/api/:hotelID/photos`
 
-###### success: return status 200
+###### success: return status 204
 ###### error: return status 400
 
 ###### removes all data given hotel id
