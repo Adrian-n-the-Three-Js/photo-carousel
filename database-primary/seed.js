@@ -36,30 +36,6 @@ const photos = [
   'https://sdc-carousel-photos.s3-us-west-1.amazonaws.com/photos/photo-1582719508461-905c673771fd.jpeg'
 ];
 
-// THIS IS DUMB. REALLY DUMB. FIND A BETTER SOLUTION IDIOT.
-const photoID = [
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-  faker.random.uuid,
-];
-
 const photoAlbums = ['All photos', 'Traveler', 'Hotel & Amenities', 'Room/Suite', 'Bathroom', 'Dining', 'Favorites', 'Pool & Beach', 'Family/Play Areas'];
 
 const generateHotel = function () {
@@ -69,7 +45,6 @@ const generateHotel = function () {
     result.push({
       hotelID: i + 1,
       photoAlbums: photoAlbums,
-      photos: photoID,
     });
   }
   return result;
@@ -81,7 +56,7 @@ const generatePhotos = function () {
   for (let i = 0; i < 10000000; i++) {
     for (let j = 0; j < 20; j++) {
       result.push({
-        photoID: photoID[j],
+        photoID: faker.random.uuid,
         hotelID: i + 1,
         userID: faker.random.uuid,
         date: faker.date.between('2020-04-01', '2020-07-01'),

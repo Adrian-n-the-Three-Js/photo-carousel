@@ -6,7 +6,6 @@ CREATE KEYSPACE IF NOT EXISTS sdc
 
 CREATE TABLE hotel (
   hotelID uuid,
-  photos list<varchar>
   photoAlbums set<varchar>,
   PRIMARY KEY (hotelID)
 );
