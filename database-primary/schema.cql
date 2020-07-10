@@ -6,10 +6,8 @@ CREATE KEYSPACE IF NOT EXISTS sdc
 
 CREATE TABLE hotel (
   hotelID uuid,
-  name varchar,
-  price int,
   photos list<varchar>
-  photoAlbum set<varchar>,
+  photoAlbums set<varchar>,
   PRIMARY KEY (hotelID)
 );
 
@@ -18,24 +16,7 @@ CREATE TABLE photos_by_hotel (
   hotelID uuid,
   userID uuid,
   date timestamp,
-  caption varchar,
-  helpful int,
   url varchar,
   photoAlbum set<varchar>,
-  filter set<varchar>,
-  trips set<varchar>,
   PRIMARY KEY (photoID, hotelID)
-);
-
-CREATE TABLE user_by_photo (
-  userID uuid,
-  photoID uuid,
-  username text,
-  location text,
-  type text,
-  avatarUrl text,
-  rating text,
-  contributions text,
-  review text,
-  PRIMARY KEY (userID, photoID)
 );

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const csvWriter = require('csv-write-stream')
+const csvWriter = require('csv-write-stream');
 const faker = require('faker');
 
 const writer = csvWriter();
@@ -36,11 +36,75 @@ const photos = [
   'https://sdc-carousel-photos.s3-us-west-1.amazonaws.com/photos/photo-1582719508461-905c673771fd.jpeg'
 ];
 
-const seedData = function () {
-  writer.pipe(fs.createWriteStream('data.csv'));
+// THIS DOESN'T WORK LMAO. FIND BETTER IDEA.
+const photoID = [
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+  faker.random.uuid,
+];
+
+const photoAlbums = ['All photos', 'Traveler', 'Hotel & Amenities', 'Room/Suite', 'Bathroom', 'Dining', 'Favorites', 'Pool & Beach', 'Family/Play Areas'];
+
+const generateHotel = function () {
+  let result = [];
+
   for (let i = 0; i < 10000000; i++) {
-    writer.write(INSERT_RANDOM_DATA_OBJECT_HERE);
+    result.push({
+      hotelID: i + 1,
+      photoAlbums: photoAlbums,
+      photos: photoID,
+    });
   }
+  return result;
 };
 
-seedData();
+const generatePhotos = function () {
+  let result = [];
+
+  for (let i = 0; i < 10000000; i++) {
+    for (let j = 0; j < 20; j++) {
+      result.push({
+        photoID: photoID[j],
+        hotelID: i + 1,
+        userID: faker.random.uuid,
+        date: faker.date.between('2020-04-01', '2020-07-01'),
+        url: photos[j],
+        photoAlbums: [photoAlbums[0], photoAlbums[Math.floor(Math.random() * 9)]],
+      });
+    }
+  }
+  return result;
+};
+
+const hotelData = generateHotel();
+const photoData = generatePhotos();
+
+const seedHotelData = function () {
+  writer.pipe(fs.createWriteStream('hotelData.csv'));
+  writer.write(hotelData);
+};
+
+const seedPhotoData = function () {
+  writer.pipe(fs.createWriteStream('photoData.csv'));
+  writer.write(photoData);
+};
+
+seedHotelData();
+seedPhotoData();
