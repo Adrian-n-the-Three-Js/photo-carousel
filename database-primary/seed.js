@@ -36,7 +36,7 @@ const photos = [
   'https://sdc-carousel-photos.s3-us-west-1.amazonaws.com/photos/photo-1582719508461-905c673771fd.jpeg'
 ];
 
-// THIS DOESN'T WORK LMAO. FIND BETTER IDEA.
+// THIS IS DUMB. REALLY DUMB. FIND A BETTER SOLUTION IDIOT.
 const photoID = [
   faker.random.uuid,
   faker.random.uuid,
