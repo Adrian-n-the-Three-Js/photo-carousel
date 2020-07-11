@@ -38,24 +38,12 @@ const photos = [
 
 const photoAlbums = ['All photos', 'Traveler', 'Hotel & Amenities', 'Room/Suite', 'Bathroom', 'Dining', 'Favorites', 'Pool & Beach', 'Family/Play Areas'];
 
-const generateHotel = function () {
-  let result = [];
+const seedPhotoData = () => {
+  writer.pipe(fs.createWriteStream('photoData.csv'));
 
-  for (let i = 0; i < 10000000; i++) {
-    result.push({
-      hotelID: i + 1,
-      photoAlbums: photoAlbums,
-    });
-  }
-  return result;
-};
-
-const generatePhotos = function () {
-  let result = [];
-
-  for (let i = 0; i < 10000000; i++) {
+  for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 20; j++) {
-      result.push({
+      writer.write({
         photoID: faker.random.uuid,
         hotelID: i + 1,
         userID: faker.random.uuid,
@@ -65,21 +53,9 @@ const generatePhotos = function () {
       });
     }
   }
-  return result;
+
+  writer.end();
+  console.log('photo seed done');
 };
 
-const hotelData = generateHotel();
-const photoData = generatePhotos();
-
-const seedHotelData = function () {
-  writer.pipe(fs.createWriteStream('hotelData.csv'));
-  writer.write(hotelData);
-};
-
-const seedPhotoData = function () {
-  writer.pipe(fs.createWriteStream('photoData.csv'));
-  writer.write(photoData);
-};
-
-seedHotelData();
 seedPhotoData();
