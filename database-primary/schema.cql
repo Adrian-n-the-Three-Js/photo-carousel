@@ -4,6 +4,8 @@ CREATE KEYSPACE IF NOT EXISTS sdc
     'replication_factor' : 3
   };
 
+USE sdc
+
 CREATE TABLE hotel (
   hotelID uuid,
   photoAlbums set<varchar>,
@@ -14,7 +16,7 @@ CREATE TABLE photos_by_hotel (
   photoID uuid,
   hotelID uuid,
   userID uuid,
-  date timestamp,
+  date date,
   url varchar,
   photoAlbum set<varchar>,
   PRIMARY KEY (photoID, hotelID)

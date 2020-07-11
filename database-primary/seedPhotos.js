@@ -44,9 +44,9 @@ const seedPhotoData = () => {
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 20; j++) {
       writer.write({
-        photoID: faker.random.uuid,
+        photoID: faker.random.uuid(),
         hotelID: i + 1,
-        userID: faker.random.uuid,
+        userID: faker.random.uuid(),
         date: faker.date.between('2020-04-01', '2020-07-01'),
         url: photos[j],
         photoAlbums: [photoAlbums[0], photoAlbums[Math.floor(Math.random() * 9)]],
