@@ -7,7 +7,7 @@ const writer = csvWriter();
 const photoAlbums = ['All photos', 'Traveler', 'Hotel & Amenities', 'Room/Suite', 'Bathroom', 'Dining', 'Favorites', 'Pool & Beach', 'Family/Play Areas'];
 
 const seedHotelData = () => {
-  writer.pipe(fs.createWriteStream('hotelData.csv'));
+  writer.pipe(fs.createWriteStream('csv-cql/hotelData.csv'));
 
   for (let i = 0; i < 5; i++) {
     writer.write({

@@ -11,7 +11,7 @@ const randomNumber = () => (
 );
 
 const seedPhotoData = () => {
-  writer.pipe(fs.createWriteStream('photoData-psql.csv'));
+  writer.pipe(fs.createWriteStream('csv-psql/photoData-.csv'));
 
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 20; j++) {
