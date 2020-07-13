@@ -8,16 +8,15 @@ USE sdc
 
 CREATE TABLE hotel (
   hotelID uuid,
-  photoAlbums set<varchar>,
+  photoAlbums set<text>,
   PRIMARY KEY (hotelID)
 );
 
 CREATE TABLE photos_by_hotel (
   photoID uuid,
   hotelID uuid,
-  userID uuid,
   date date,
-  url varchar,
-  photoAlbum set<varchar>,
+  url text,
+  photoAlbum set<text>,
   PRIMARY KEY (photoID, hotelID)
 );

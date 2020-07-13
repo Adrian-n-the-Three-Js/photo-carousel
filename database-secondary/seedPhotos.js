@@ -19,8 +19,9 @@ const seedPhotoData = () => {
         hotelID: i + 1,
         photoID: faker.random.uuid(),
         date: faker.date.between('2020-04-01', '2020-07-01'),
+        photoAlbum1: photoAlbums[0],
+        photoAlbum2: photoAlbums[Math.floor(Math.random() * 8 + 1)],
         url: `https://sdc-carousel-photos.s3-us-west-1.amazonaws.com/photos/sdc-${randomNumber()}.jpg`,
-        photoAlbums: [photoAlbums[0], photoAlbums[Math.floor(Math.random() * 8 + 1)]],
       });
     }
   }

@@ -1,11 +1,13 @@
-const Hotels = require('../database/schema.js');
+const client = require('../database-primary/index.js');
 
 const get = function (req, res) {
-  Hotels.find({ id: req.params.hotelID })
-    .exec((err, data) => {
-      if (err) res.sendStatus(400);
-      res.send(data);
-    });
+  const hotelID = req.params.hotelID;
+  const query = `SELECT * FROM sdc.hotel WHERE hotelID = ${hotelID}`;
+
+  client.execute(query, (err, result) => {
+    if (err) res.sendStatus(400);
+    res.send(result);
+  });
 };
 
 module.exports = {
