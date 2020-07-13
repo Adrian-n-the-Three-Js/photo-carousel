@@ -7,14 +7,14 @@ CREATE KEYSPACE IF NOT EXISTS sdc
 USE sdc
 
 CREATE TABLE hotel (
-  hotelID uuid,
+  hotelID int,
   photoAlbums set<text>,
   PRIMARY KEY (hotelID)
 );
 
 CREATE TABLE photos_by_hotel (
   photoID uuid,
-  hotelID uuid,
+  hotelID int,
   date date,
   url text,
   photoAlbum set<text>,
