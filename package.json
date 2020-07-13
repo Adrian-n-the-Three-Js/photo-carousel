@@ -27,6 +27,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cassandra-driver": "^4.5.2",
+    "cli-progress": "^3.8.2",
     "csv-write-stream": "^2.0.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",

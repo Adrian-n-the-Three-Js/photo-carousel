@@ -13,10 +13,10 @@ CREATE TABLE hotel (
 );
 
 CREATE TABLE photos_by_hotel (
-  photoID uuid,
+  photoID int,
   hotelID int,
-  date date,
-  url text,
+  date text,
   photoAlbum set<text>,
+  url text,
   PRIMARY KEY (photoID, hotelID)
 );

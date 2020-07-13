@@ -4,7 +4,7 @@ const faker = require('faker');
 
 const writer = csvWriter();
 
-const photoAlbums = ['All photos', 'Traveler', 'Hotel & Amenities', 'Room/Suite', 'Bathroom', 'Dining', 'Favorites', 'Pool & Beach', 'Family/Play Areas'];
+const photoAlbums = ['"All photos"', '"Traveler"', '"Hotel & Amenities"', '"Room/Suite"', '"Bathroom"', '"Dining"', '"Favorites"', '"Pool & Beach"', '"Family/Play Areas"'];
 
 const seedHotelData = () => {
   writer.pipe(fs.createWriteStream('csv-cql/hotelData.csv'));
