@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "node database/seedData.js",
+    "seed": "node  --max-old-space-size=8192 database-primary/seedPhotos.js",
     "nodemon": "nodemon server/app.js",
     "react-dev": "webpack -d --watch",
     "start": "node server/app.js",
